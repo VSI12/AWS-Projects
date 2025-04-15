@@ -11,4 +11,4 @@ describe_instances = ec2_client.describe_instances()
 
 for each_instance in describe_instances['Reservations']:
     for instance in each_instance['Instances']:
-       print(instance['InstanceId'])
+       print(instance['InstanceType'])
