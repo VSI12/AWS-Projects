@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd Terraform 
+cd ../terraform 
 IP=$(terraform output -raw public_ip)
 
 cd ../
-cat > Ansible/inventory <<EOF
+cat > ansible/inventory <<EOF
 [web]
 $IP 
 EOF
