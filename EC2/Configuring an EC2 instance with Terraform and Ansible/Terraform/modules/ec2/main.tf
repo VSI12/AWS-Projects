@@ -9,13 +9,13 @@ resource "aws_key_pair" "key-pair" {
 }
 resource "local_file" "private_key" {
   content  = tls_private_key.key-pair.private_key_pem
-  filename = "${path.module}/terraform-key.pem"
+  filename = "../Ansible/ec2-key.pem"
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0f88e80871fd81e91"
-  instance_type = "t2.micro"
-  key_name      = aws_key_pair.key-pair.key_name
+  ami             = "ami-0f88e80871fd81e91"
+  instance_type   = "t2.micro"
+  key_name        = aws_key_pair.key-pair.key_name
   security_groups = [aws_security_group.app_sg.name]
 
   tags = {
