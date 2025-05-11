@@ -44,3 +44,6 @@ resource "aws_security_group" "app_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+output "public_ip" {
+  value = aws_instance.app_server.public_ip
+}
