@@ -9,7 +9,7 @@ resource "aws_key_pair" "key-pair" {
 }
 resource "local_file" "private_key" {
   content  = tls_private_key.key-pair.private_key_pem
-  filename = "~/.ssh/terraform-key.pem"
+  filename = "../Ansible/ec2-key.pem"
 }
 
 resource "aws_instance" "app_server" {
