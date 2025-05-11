@@ -8,3 +8,7 @@ terraform {
     
     required_version = ">= 1.7.5"
 }
+
+module "ec2" {
+    source = "./modules/ec2"
+}
